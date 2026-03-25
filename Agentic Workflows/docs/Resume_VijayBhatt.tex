@@ -45,7 +45,8 @@
 \begin{center}
   {\LARGE\bfseries VIJAY BHATT} \\[6pt]
   {\large Principal Architect | Distributed Systems | AI, RAG \& Agentic Systems | Cloud-Native \& Event-Driven Architecture} \\[4pt]
-  {Pune, India | +91-9764834026 | vjbhatt760@gmail.com}
+  {Pune, India | +91-9764834026 | vjbhatt760@gmail.com} \\[4pt]
+  {\small \textcolor{accent}{\textbf{AI Career Chatbot:}} \href{https://github.com/Vijay2351989/ai-career-conversations}{github.com/Vijay2351989/ai-career-conversations} --- Ask an AI agent about my career instead of reading this resume!}
 \end{center}
 
 % ==================== PROFESSIONAL SUMMARY ====================
@@ -118,6 +119,15 @@ Results-driven Principal Architect with 15+ years of experience designing and de
   \item Implemented \textbf{Azure Event Grid} integration for real-time capture of VM deployment status events, improving visibility and reliability of provisioning workflows.
   \item Led \textbf{sprint planning and requirement grooming} with the team, presenting technical proposals to senior stakeholders for requirement review and season planning.
   \item Mentored team members on implementation, ensuring timely delivery of key work items aligned with season goals.
+\end{itemize}
+
+\vspace{8pt}
+% --- Bigstep Technologies ---
+\jobtitle{Technology Lead}{Bigstep Technologies}{Oct 2021 -- Apr 2022}{}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item Served as \textbf{Technology Lead} working as a \textbf{full-stack MEAN developer}, responsible for designing and developing features across the stack using \textbf{MongoDB, Express, Angular, and Node.js}.
+  \item Led technical decision-making, mentored team members, and contributed to architecture and implementation of application features.
 \end{itemize}
 
 \vspace{8pt}
@@ -198,6 +208,10 @@ Designed and architected an enterprise meeting intelligence platform that transf
 Architected an agentic workflow engine using the ReAct (Reason-Act-Observe) pattern with LangChain4j and multi-LLM support (OpenAI, Claude). Users provide natural language prompts and select tools; the agent autonomously iterates through decision-action-observation cycles to complete workflows. Designed hierarchical agent architecture with child agents for complex tools, preventing context overpopulation. Implemented a Policy Enforcer system---a multi-agent evaluation pipeline where policy documents feed into a dedicated Policy Agent that enforces constraints on the main agent's tool selections via an evaluator-feedback child agent, approving or rejecting actions in real time.
 
 \vspace{6pt}
+\textbf{Common Agentic Framework --- Enterprise Agent-as-a-Service Platform (Krista AI)} \\
+Identified a critical organizational gap where multiple teams were independently building AI agents with inconsistent design patterns, no standardized context or memory management, and unaddressed agent security concerns. Designed and built a centralized agentic framework that allows applications to define agent configurations---model selection with fallback, guardrail policies, token limits, and context management strategies---and register reusable prompt templates with static and dynamic segments (runtime injection of tool definitions, structured output schemas, and domain-specific data). Applications create sessions against the framework, selecting their configured agent type and template; the prompt builder assembles the final prompt, and the agent executes within a managed lifecycle. The framework handles conversation memory (cache-backed short-term buffer, database-backed long-term persistence), enforces guardrails, and manages context windows per the application's selected strategy. Each application's system prompt is wrapped inside a framework-level agent system prompt that provides self-annealing behavior and graceful recovery semantics. Built with Python, LangGraph/LangChain, with cache for short-term and database for long-term memory management.
+
+\vspace{6pt}
 \textbf{Cross-Service Interoperability Framework (Krista AI)} \\
 Designed a polyglot service contract framework enabling type-safe communication between Node.js, Python, and Java services using Protocol Buffers and Apache Artemis. Built a code generator that transforms language-agnostic service definitions and Proto schemas into language-specific client/server libraries with built-in Artemis connection handling and schema registration, adopted as a shared library across the microservice ecosystem.
 
@@ -213,12 +227,32 @@ Led the extraction and consolidation of shared functionality from multiple ERPNe
 \textbf{ProcureEdge Cloud Platform (Infosys/Edgeverve)} \\
 Worked on the operational procurement module of ProcureEdge---a cloud-based B2B Source-to-Pay platform for global enterprises. Implemented shopping cart, team cart, and multi-step configurable approval workflows, enabling enterprises to streamline procurement operations, reduce TCO, and improve supplier compliance.
 
+% ==================== PERSONAL PROJECTS ====================
+\section{Personal Projects}
+
+\textbf{AI Career Conversations} | \href{https://github.com/Vijay2351989/ai-career-conversations}{GitHub} \\
+An AI-powered career chatbot that serves as an interactive virtual resume---enabling interviewers and recruiters to learn about my background, skills, and experience through natural conversation instead of reading a static document. Built with OpenAI GPT-4o Mini and Gradio, the agent is contextually augmented with my resume and career summary, and includes custom tools for handling edge-case queries and push notifications for unanswered questions. Deployed on HuggingFace Spaces. \textit{Beyond its utility, this project itself demonstrates my ability to design and deploy AI agents with domain-specific knowledge grounding.}
+
+\vspace{6pt}
+\textbf{Claude Skills \& Agents} | \href{https://github.com/Vijay2351989/claude-skills-agents}{GitHub} \\
+A curated collection of 14+ reusable Claude Code skills and agents for automating software development workflows and everyday tasks. Includes programming-focused agents (spec creation, systematic debugging, code review, project management, test architecture) and task automation agents (email management, movie recommendations, shopping). Built with Python, TypeScript, and Shell.
+
+\vspace{6pt}
+\textbf{AI Worker Sidekick Agent} | \href{https://github.com/Vijay2351989/ai-worker-sidekick-agent}{GitHub} \\
+An autonomous agent framework built with LangGraph implementing the worker-evaluator-optimizer design pattern. Features a Gradio chatbot interface with per-user session management, human feedback loops, and iterative optimization cycles. The worker agent executes tasks using integrated tools (web search, Wikipedia, file management), the evaluator validates output against success criteria, and the optimizer iteratively improves results. Deployed on HuggingFace Spaces.
+
+\vspace{6pt}
+\textbf{AI Corrective RAG Agent} | \href{https://github.com/Vijay2351989/ai-corrective-rag-agent}{GitHub} \\
+A multi-agent corrective RAG system built with LangGraph that intelligently routes queries between a ChromaDB vector store and web search based on semantic similarity scores. Features a 5-stage pipeline: Planner (query refinement), Classifier (metadata-based categorization), Score (similarity threshold evaluation), RAG (vector retrieval), and Web Search (fallback). Uses semantic chunking and configurable thresholds.
+
+\vspace{6pt}
+\textbf{AI Deep Research} | \href{https://github.com/Vijay2351989/ai-deep-research}{GitHub} \\
+An autonomous deep research system built with the OpenAI Agent SDK featuring a multi-agent pipeline: Planner (generates search strategy with relevant terms), Search (executes web searches), Writer (synthesizes findings into comprehensive markdown reports), and Research Manager (orchestrates the workflow). Users provide a topic, confirm search terms, and receive structured research summaries. Deployed on HuggingFace Spaces.
+
 % ==================== EDUCATION ====================
 \section{Education}
-% TODO: To be filled in next iteration
 
-% ==================== CERTIFICATIONS ====================
-\section{Certifications}
-% TODO: To be filled in next iteration
+\textbf{Bachelor of Technology} | Institute of Engineering and Management | 2011 | DGPA: 8.57 / 10 \\
+West Bengal University of Technology (W.B.U.T.)
 
 \end{document}
