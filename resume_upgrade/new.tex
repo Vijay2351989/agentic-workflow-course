@@ -1,0 +1,224 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage[margin=0.7in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontenc}
+\usepackage{parskip}
+
+% Colors (matching reference resume teal/green accent)
+\definecolor{accent}{HTML}{1A8A7D}
+\definecolor{darktext}{HTML}{333333}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accent,
+}
+
+% Section formatting
+\titleformat{\section}
+  {\large\bfseries\color{accent}\uppercase}
+  {}
+  {0em}
+  {}
+  [\color{accent}\titlerule]
+
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% Remove page numbers
+\pagenumbering{gobble}
+
+% Custom commands
+\newcommand{\jobtitle}[4]{
+  \vspace{6pt}
+  {\textbf{\textcolor{accent}{#1}} | #2 | #3}
+  \vspace{2pt}
+}
+
+\begin{document}
+
+% ==================== HEADER ====================
+\begin{center}
+  {\LARGE\bfseries VIJAY BHATT} \\[6pt]
+  {\large Principal Architect | Distributed Systems | AI, RAG \& Agentic Systems | Cloud-Native \& Event-Driven Architecture} \\[4pt]
+  {Pune, India | +91-9764834026 | vjbhatt760@gmail.com}
+\end{center}
+
+% ==================== PROFESSIONAL SUMMARY ====================
+\section{Professional Summary}
+Results-driven Principal Architect with 15+ years of experience designing and delivering production-grade distributed systems, cloud-native microservices, and AI-powered enterprise solutions. Deep expertise in Node.js, TypeScript, and Python, with a strong track record of architecting scalable event-driven systems and microservice ecosystems. Extensive experience implementing microservices design patterns including API Gateway, CQRS, Saga, circuit breaker, and service mesh to build resilient, loosely coupled distributed architectures. Skilled in building RAG pipelines, AI-powered Q\&A systems, agentic workflows, and document understanding platforms, with hands-on experience designing agentic patterns such as ReAct agents, evaluator-feedback loops, parallel sub-agent orchestration, and hierarchical multi-agent systems. Proven ability to lead cross-functional engineering teams, mentor developers, and drive measurable impact in system design, operational efficiency, and platform modernization across domains including energy, logistics, collaboration, and procurement.
+
+% ==================== CORE SKILLS / TECHNICAL SKILLS ====================
+\section{Core Skills / Technical Skills}
+
+\textbf{Programming Languages \& Frameworks:} JavaScript, TypeScript, Python, Node.js, Express, Angular, React, Redux, FastAPI \\[2pt]
+\textbf{Backend:} Node.js/Express, FastAPI, REST APIs \\[2pt]
+\textbf{AI/ML:} LangChain, LLM Integration, AI Agents, RAG Pipelines, Vector Databases (ChromaDB, Pinecone), Embeddings, Document Understanding, Agentic Design Patterns (ReAct, Evaluator-Feedback, Parallel Sub-Agent, Hierarchical) \\[2pt]
+\textbf{Event Streaming \& Messaging:} Apache Kafka, Apache Artemis, Message Bus Architecture, Queues, Topics, Event-Driven Patterns \\[2pt]
+\textbf{Databases:} MongoDB, Redis, PostgreSQL \\[2pt]
+\textbf{Architecture:} Microservices, Event-Driven Architecture, Distributed Systems, API Gateway, CQRS, Saga, Circuit Breaker, Service Mesh, Micro Frontends (Module Federation) \\[2pt]
+\textbf{DevOps \& Containerization:} Docker, Kubernetes, Helm, Jenkins, Travis CI, GitHub Actions, CI/CD Pipelines, Nginx, Blue/Green \& Canary Deployments \\[2pt]
+\textbf{Frontend:} Angular, React, HTML5, CSS3, Webpack, Babel, Module Federation \\[2pt]
+\textbf{AI Coding Tools:} Claude Code (agents, reusable skills), Augment Code
+
+% ==================== PROFESSIONAL EXPERIENCE ====================
+\section{Professional Experience}
+
+% --- Krista AI ---
+\jobtitle{Principal Architect}{Krista AI}{Aug 2024 -- Present}{}
+
+\textit{Krista is an agentic platform that transforms businesses' operations by orchestrating people, systems, and AI using everyday language. Designed for simplicity and flexibility, Krista enables organizations to automate processes across multiple systems and streamline workflows with conversational ease---no coding required.}
+
+\vspace{4pt}
+\textbf{Meeting Agent --- Enterprise Conversational Memory Platform}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Served as \textbf{design architect} for the Meeting Agent project, transforming meeting interactions into a centralized, searchable enterprise memory---replacing disconnected recording silos with a unified cognitive resource.
+  \item Architected and built a \textbf{meeting bot} that joins live meetings, scrapes underlying meeting platforms, and captures real-time transcripts via captions using \textbf{Playwright}, feeding data into the system through an \textbf{event-driven architecture}.
+  \item Designed and implemented the \textbf{Conversation Agent}, an event-driven pipeline using \textbf{Apache Kafka} consumers to process meeting events, with optimized caching layers, feeding meeting data into a \textbf{RAG document store} for enterprise-wide Q\&A and knowledge retrieval.
+  \item Built a \textbf{meeting management system} with \textbf{OAuth-based authentication}, enabling users to view upcoming meetings, configure bot permissions, define \textbf{custom summary templates}, and control bot lifecycle---with the Conversation Agent autonomously managing bot orchestration and generating tailored meeting summaries.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Agentic Workflow Engine --- ReAct Pattern-Based Autonomous Agent}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Designed and architected an \textbf{agentic workflow engine} using the \textbf{ReAct (Reason-Act-Observe) pattern}, enabling users to provide natural language workflow prompts and select tools, with the agent autonomously iterating through decision, action, and observation cycles to complete complex workflows.
+  \item Built the agent using \textbf{LangChain4j} with multi-LLM support (\textbf{OpenAI, Claude}), designing structured \textbf{tool definition schemas} for seamless tool invocation and response handling.
+  \item Implemented a \textbf{hierarchical agent architecture} with child agents for large-scope tools (e.g., extension invoker), preventing context window overpopulation in the main agent and improving accuracy and cost efficiency.
+  \item Designed and implemented \textbf{guardrails} for agent behavior control, along with comprehensive \textbf{token usage tracking} and a \textbf{cost monitoring dashboard} for full observability of LLM consumption across workflows.
+  \item Architected the \textbf{Policy Enforcer} system---a \textbf{multi-agent evaluation pipeline} where authors upload policy documents to a document set, and a dedicated \textbf{Policy Agent (ReAct)} assists in selecting relevant policy chunks during authoring. These policy constraints are enforced at runtime via an \textbf{evaluator-feedback child agent} that evaluates the main agent's tool selections against policy rules, approving or rejecting actions, forcing the main agent to select alternate tools or gracefully exit when policy constraints cannot be met.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Cross-Service Interoperability Framework --- Polyglot Service Contract Architecture}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Designed and implemented an \textbf{enterprise-grade interoperability framework} enabling seamless communication between services written in different languages (Node.js, Python, Java) using \textbf{Protocol Buffers (Proto)} and \textbf{Apache Artemis} messaging.
+  \item Architected a \textbf{common service contract project} where service definitions, including method signatures, input/output schemas, and annotations, were defined in a language-agnostic manner, with Proto schema generation for input/output POJOs.
+  \item Built a \textbf{code generator layer} that transforms service definitions and Proto schemas into \textbf{language-specific client/server libraries} for Node.js, Python, and Java, enabling type-safe cross-language service communication.
+  \item The generated libraries internally manage \textbf{Artemis connection handling, Proto schema registration}, and message serialization---allowing application teams to simply include the library as a dependency and use structured service definitions to communicate across the polyglot microservice ecosystem.
+\end{itemize}
+
+\vspace{8pt}
+% --- SLB ---
+\jobtitle{Tech Lead}{SLB (Schlumberger)}{May 2023 -- Aug 2024}{}
+
+\textit{PTS (Petro Technical Suite) is a key petrotechnical program in SLB responsible for provisioning cloud VMs for customers, with auto-deployment of applications on user login, abstracting cloud complexities and delivering ready-to-use environments for petrotechnical operations.}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item Joined as \textbf{Technical Lead} in the shared services team, managing a suite of \textbf{Node.js microservices} including the core provisioning service that triggers VM-related operations on cloud based on user requests.
+  \item Led \textbf{architectural improvement initiatives} across all shared services, handling enhancements, bug fixes, and modernization of legacy components.
+  \item Designed and implemented a \textbf{billing microservice} from the ground up, enabling usage-based billing of customers for cloud VM consumption---a key business initiative for the program.
+  \item Scaled billing APIs using \textbf{rate limiting and semaphore-based concurrency control}, and separated read/write data stores using the \textbf{CQRS pattern with event sourcing} for high-throughput billing operations.
+  \item Implemented \textbf{Saga orchestration} pattern for managing distributed transactions across microservices, ensuring data consistency in complex multi-step provisioning and billing workflows.
+  \item Introduced \textbf{circuit breaker patterns} for inter-service communication, improving fault tolerance and reliability across the microservice ecosystem.
+  \item \textbf{Re-architected monolithic services} into lean, decoupled microservices with \textbf{polyglot persistence} (introducing purpose-fit databases per service) and deployed them on the internal \textbf{LightOps Kubernetes cluster} following latest organizational standards.
+  \item Implemented \textbf{Azure Event Grid} integration for real-time capture of VM deployment status events, improving visibility and reliability of provisioning workflows.
+  \item Led \textbf{sprint planning and requirement grooming} with the team, presenting technical proposals to senior stakeholders for requirement review and season planning.
+  \item Mentored team members on implementation, ensuring timely delivery of key work items aligned with season goals.
+\end{itemize}
+
+\vspace{8pt}
+% --- ElasticRun ---
+\jobtitle{Lead Engineer}{ElasticRun}{Apr 2022 -- Apr 2023}{}
+
+\textit{Matrix is the in-house ERPNext platform for ElasticRun, supporting all HR and Accounts related functionalities at the organization level.}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item Analyzed multiple applications under the \textbf{Matrix umbrella} and led the initiative to extract and consolidate core shared functionality into \textbf{Matrix Core}---a reusable framework adopted across teams.
+  \item Coordinated with cross-functional teams to drive \textbf{reusability, standardization, and adoption} of the Matrix Core framework across multiple Matrix applications.
+  \item Managed \textbf{deployment and optimization} of the Matrix Core framework for production environments.
+  \item Redesigned and improved the complete \textbf{CI/CD strategy and deployment automation} pipeline for the application suite.
+\end{itemize}
+
+\vspace{8pt}
+% --- Barco ---
+\jobtitle{Senior Engineer}{Barco}{Mar 2020 -- Sep 2021}{}
+
+\textit{Chimay is a cloud-serviced product enabling multisite collaborative meetings, supporting various communication platforms with a rich collaborative experience including whiteboarding and active content sharing via a message bus architecture.}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item Led the \textbf{greenfield setup} of the application, establishing the \textbf{microservices architecture} foundation including service decomposition, inter-service communication patterns, and deployment strategy.
+  \item Designed \textbf{RESTful API contracts} and \textbf{database schemas} across services, ensuring scalable and maintainable data models.
+  \item Built backend \textbf{Node.js microservices} for core meeting features---meeting service, adapter services, and room pairing service.
+  \item Managed \textbf{cloud deployments} including \textbf{Helm chart creation} for individual services and deployment to \textbf{Kubernetes clusters}.
+  \item Implemented \textbf{zero-downtime deployments} using rolling update and \textbf{blue/green deployment strategies}.
+  \item Implemented \textbf{application health monitoring} using NewRelic ping monitors and \textbf{application analytics} using StatsD, Graphite, and Grafana dashboards.
+  \item Designed \textbf{message bus architecture} using PubNub for cascading notifications to frontend clients, including secure subscription and client presence detection.
+\end{itemize}
+
+\vspace{8pt}
+% --- Citicorp ---
+\jobtitle{Officer}{Citicorp Services India Pvt Ltd}{Dec 2018 -- Mar 2020}{}
+
+\textit{Governance Risk Compliance is an Operational Risk module in banking, enabling bankers to forecast risk for operational activities across regions, apply control measures, and generate severity and mitigation metrics.}
+
+\begin{itemize}[leftmargin=*, nosep]
+  \item Led the \textbf{micro frontend architecture} initiative using \textbf{Webpack Module Federation}, building container/shell applications hosting multiple independent micro frontend apps in Angular.
+  \item Created \textbf{reusable UI component libraries} using Angular Elements and ngx-build, enabling cross-project component sharing across the organization.
+  \item Led offshore team coordination with onshore stakeholders, driving \textbf{requirements gathering and design implementation}.
+  \item Designed \textbf{Angular components, routes, and modules}, integrating third-party libraries like PrimeNG with custom styling to meet application requirements.
+  \item Supported \textbf{SIT and UAT} cycles with timely defect resolution.
+\end{itemize}
+
+\vspace{8pt}
+% --- Infosys/Edgeverve ---
+\jobtitle{Product Engineer $\rightarrow$ Technical Staff Member}{Infosys / Edgeverve System Ltd}{Dec 2011 -- Dec 2018}{}
+
+\textit{Started career as a fresher and progressively grew from junior developer to senior developer and finally into a technical lead role over 7 years across two major product lines---ProcureEdge (B2B Procurement) and AssistEdge (RPA Automation).}
+
+\vspace{4pt}
+\textbf{ProcureEdge Cloud Platform (Dec 2011 -- Jul 2017)}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Began career as a \textbf{fresher}, building foundational skills in \textbf{JavaScript, Node.js, HTML, CSS, and MongoDB} while working on an enterprise-grade B2B procurement platform.
+  \item Gradually took on increased responsibility, progressing from implementation tasks to \textbf{requirement analysis, technical feasibility assessment, and effort estimation}.
+  \item Grew into a \textbf{senior developer and mentor} role, leading junior developers with code reviews, deliverable tracking, and technical guidance.
+  \item Worked on the \textbf{operational procurement module} including shopping cart, team cart, multi-step approval workflows, and supplier compliance features.
+  \item Gained deep understanding of \textbf{end-to-end development lifecycle}---from FSD analysis and wireframe interpretation to development, unit testing, and deployment.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{AssistEdge Cloud Platform --- RPA Automation (Aug 2017 -- Dec 2018)}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Transitioned into a \textbf{technical staff member} role on Edgeverve's \textbf{Robotic Process Automation} product, competing with Automation Anywhere and UiPath.
+  \item Worked on \textbf{Java enterprise application automation} (Oracle Fusion, Oracle EBS), hooking into Java processes using agents to identify and automate Swing/AWT UI components.
+  \item Tackled complex technical challenges around \textbf{JDK compatibility, application security}, and cross-environment automation feasibility.
+\end{itemize}
+
+% ==================== KEY PROJECTS ====================
+\section{Key Projects}
+
+\textbf{Meeting Agent --- Enterprise Conversational Memory Platform (Krista AI)} \\
+Designed and architected an enterprise meeting intelligence platform that transforms video call interactions into a centralized, searchable organizational memory. Built a meeting bot using Playwright that joins live meetings, captures real-time transcripts, and feeds data through an event-driven architecture using Apache Kafka. Designed the Conversation Agent---an event-driven pipeline with Kafka consumers, optimized caching, and a RAG document store enabling enterprise-wide Q\&A over meeting content. Built a meeting management system with OAuth authentication, configurable summary templates, bot lifecycle management, and meeting owner controls.
+
+\vspace{6pt}
+\textbf{Agentic Workflow Engine --- ReAct Pattern Autonomous Agent (Krista AI)} \\
+Architected an agentic workflow engine using the ReAct (Reason-Act-Observe) pattern with LangChain4j and multi-LLM support (OpenAI, Claude). Users provide natural language prompts and select tools; the agent autonomously iterates through decision-action-observation cycles to complete workflows. Designed hierarchical agent architecture with child agents for complex tools, preventing context overpopulation. Implemented a Policy Enforcer system---a multi-agent evaluation pipeline where policy documents feed into a dedicated Policy Agent that enforces constraints on the main agent's tool selections via an evaluator-feedback child agent, approving or rejecting actions in real time.
+
+\vspace{6pt}
+\textbf{Cross-Service Interoperability Framework (Krista AI)} \\
+Designed a polyglot service contract framework enabling type-safe communication between Node.js, Python, and Java services using Protocol Buffers and Apache Artemis. Built a code generator that transforms language-agnostic service definitions and Proto schemas into language-specific client/server libraries with built-in Artemis connection handling and schema registration, adopted as a shared library across the microservice ecosystem.
+
+\vspace{6pt}
+\textbf{Cloud VM Billing \& Microservices Modernization (SLB)} \\
+Designed and implemented a usage-based billing microservice for cloud VM consumption within the PTS program. Applied CQRS with event sourcing to separate read/write data stores, scaled APIs using rate limiting and semaphore-based concurrency control, and implemented Saga orchestration for distributed transactions across provisioning and billing workflows. Led the re-architecture of monolithic shared services into lean, decoupled microservices with circuit breaker patterns, deployed on the internal LightOps Kubernetes cluster.
+
+\vspace{6pt}
+\textbf{Matrix Core Framework (ElasticRun)} \\
+Led the extraction and consolidation of shared functionality from multiple ERPNext applications into a reusable Matrix Core framework. Drove cross-team adoption, standardization, and redesigned the complete CI/CD strategy and deployment automation pipeline for the application suite.
+
+\vspace{6pt}
+\textbf{ProcureEdge Cloud Platform (Infosys/Edgeverve)} \\
+Worked on the operational procurement module of ProcureEdge---a cloud-based B2B Source-to-Pay platform for global enterprises. Implemented shopping cart, team cart, and multi-step configurable approval workflows, enabling enterprises to streamline procurement operations, reduce TCO, and improve supplier compliance.
+
+% ==================== EDUCATION ====================
+\section{Education}
+% TODO: To be filled in next iteration
+
+% ==================== CERTIFICATIONS ====================
+\section{Certifications}
+% TODO: To be filled in next iteration
+
+\end{document}
