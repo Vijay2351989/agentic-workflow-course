@@ -59,12 +59,15 @@ Results-driven Principal Architect with 15+ years of experience designing and de
 
 \textbf{Programming Languages \& Frameworks:} JavaScript, TypeScript, Python, Node.js, Express, Angular, React, Redux, FastAPI \\[2pt]
 \textbf{Backend:} Node.js/Express, FastAPI, REST APIs \\[2pt]
-\textbf{AI/ML:} LangChain, LLM Integration, AI Agents, RAG Pipelines, Vector Databases (ChromaDB, Pinecone), Embeddings, Document Understanding, Agentic Design Patterns (ReAct, Evaluator-Feedback, Parallel Sub-Agent, Hierarchical) \\[2pt]
+\textbf{AI --- Agentic:} LangChain, LangGraph, LLM Integration, AI Agents, Memory Management, Agentic Design Patterns (ReAct, Evaluator-Feedback, Parallel Sub-Agent, Hierarchical, Reflection/Refinement, Stochastic Consensus Multi-Agent, Agent Chatroom), Observability/Evaluation (Langfuse, MLflow, LangSmith) \\[2pt]
+\textbf{AI --- RAG Pipelines:} AI Q\&A Systems, Multi-Hop RAG, HyDE RAG, Hybrid Retrieval (BM25 + Semantic Search, Reciprocal Rank Fusion), Reranking (Bi-Encoder, Cross-Encoder), ANN Indexing (HNSW, FAISS), Embeddings, Vector Databases (Qdrant, ChromaDB, Pinecone), Document Understanding \\[2pt]
 \textbf{Event Streaming \& Messaging:} Apache Kafka, Apache Artemis, Message Bus Architecture, Queues, Topics, Event-Driven Patterns \\[2pt]
 \textbf{Databases:} MongoDB, Redis, PostgreSQL \\[2pt]
 \textbf{Architecture:} Microservices, Event-Driven Architecture, Distributed Systems, API Gateway, CQRS, Saga, Circuit Breaker, Service Mesh, Micro Frontends (Module Federation) \\[2pt]
 \textbf{DevOps \& Containerization:} Docker, Kubernetes, Helm, Jenkins, Travis CI, GitHub Actions, CI/CD Pipelines, Nginx, Blue/Green \& Canary Deployments \\[2pt]
 \textbf{Frontend:} Angular, React, HTML5, CSS3, Webpack, Babel, Module Federation \\[2pt]
+\textbf{Prompt Engineering:} DSPy (Signatures, Modules for programmatic prompt construction), Structured Prompt Design (role definition, goal specification, constraints/rules, failure conditions), Few-Shot Prompting, Information-Dense Prompt Composition \\[2pt]
+\textbf{Context Engineering:} Context Summarization, Tiered Condensation, Memory Extraction, Long-Term Memory Management \\[2pt]
 \textbf{AI Coding Tools:} Claude Code (agents, reusable skills), Augment Code
 
 % ==================== PROFESSIONAL EXPERIENCE ====================
@@ -74,15 +77,6 @@ Results-driven Principal Architect with 15+ years of experience designing and de
 \jobtitle{Principal Architect}{Krista AI}{Aug 2024 -- Present}{}
 
 \textit{Krista is an agentic platform that transforms businesses' operations by orchestrating people, systems, and AI using everyday language. Designed for simplicity and flexibility, Krista enables organizations to automate processes across multiple systems and streamline workflows with conversational ease---no coding required.}
-
-\vspace{4pt}
-\textbf{Meeting Agent --- Enterprise Conversational Memory Platform}
-\begin{itemize}[leftmargin=*, nosep]
-  \item Served as \textbf{design architect} for the Meeting Agent project, transforming meeting interactions into a centralized, searchable enterprise memory---replacing disconnected recording silos with a unified cognitive resource.
-  \item Architected and built a \textbf{meeting bot} that joins live meetings, scrapes underlying meeting platforms, and captures real-time transcripts via captions using \textbf{Playwright}, feeding data into the system through an \textbf{event-driven architecture}.
-  \item Designed and implemented the \textbf{Conversation Agent}, an event-driven pipeline using \textbf{Apache Kafka} consumers to process meeting events, with optimized caching layers, feeding meeting data into a \textbf{RAG document store} for enterprise-wide Q\&A and knowledge retrieval.
-  \item Built a \textbf{meeting management system} with \textbf{OAuth-based authentication}, enabling users to view upcoming meetings, configure bot permissions, define \textbf{custom summary templates}, and control bot lifecycle---with the Conversation Agent autonomously managing bot orchestration and generating tailored meeting summaries.
-\end{itemize}
 
 \vspace{4pt}
 \textbf{Agentic Workflow Engine --- ReAct Pattern-Based Autonomous Agent}
@@ -95,12 +89,40 @@ Results-driven Principal Architect with 15+ years of experience designing and de
 \end{itemize}
 
 \vspace{4pt}
+\textbf{AI Q\&A Module --- Retrieval Pipeline Optimization for Enterprise Document Sets}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Drove end-to-end optimization of the \textbf{AI Q\&A module} used by clients to perform question-answering over large document sets (collections of enterprise documents ingested into a RAG pipeline), significantly improving retrieval accuracy and response relevance.
+  \item Redesigned the retrieval pipeline starting with \textbf{query decomposition} using \textbf{HyDE (Hypothetical Document Embeddings) combined with multi-hop reasoning} to break complex queries into intermediate reasoning steps and generate richer search context, and introduced a \textbf{hybrid search strategy} combining \textbf{lexical (BM25) and semantic (vector) search} to capture both keyword-exact and contextually similar results.
+  \item Implemented \textbf{Reciprocal Rank Fusion (RRF)} to merge results from lexical and semantic retrieval into a unified ranking, followed by \textbf{Cross-Encoder reranking} to score and surface the most relevant chunks---delivering a measurable improvement in answer quality over the original single-strategy RAG approach.
+  \item Optimized retrieval performance for growing document sets by introducing \textbf{metadata filtering} and \textbf{database indexing strategies}, enabling faster and more targeted chunk retrieval as document volume scaled.
+  \item Currently evaluating \textbf{Approximate Nearest Neighbor (ANN)} techniques for sub-linear retrieval at scale---completed a \textbf{proof-of-concept on Qdrant vector database using the HNSW algorithm}, and evaluating \textbf{FAISS} for in-memory ANN indexing. Additionally exploring \textbf{knowledge graph--based storage and retrieval} for improved entity-relationship search across document sets (under development, not yet production-deployed).
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Meeting Agent --- Enterprise Conversational Memory Platform}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Served as \textbf{design architect} for the Meeting Agent project, transforming meeting interactions into a centralized, searchable enterprise memory---replacing disconnected recording silos with a unified cognitive resource.
+  \item Architected and built a \textbf{meeting bot} that joins live meetings, scrapes underlying meeting platforms, and captures real-time transcripts via captions using \textbf{Playwright}, feeding data into the system through an \textbf{event-driven architecture}.
+  \item Designed and implemented the \textbf{Conversation Agent}, an event-driven pipeline using \textbf{Apache Kafka} consumers to process meeting events, with optimized caching layers, feeding meeting data into a \textbf{RAG document store} for enterprise-wide Q\&A and knowledge retrieval.
+  \item Built a \textbf{meeting management system} with \textbf{OAuth-based authentication}, enabling users to view upcoming meetings, configure bot permissions, define \textbf{custom summary templates}, and control bot lifecycle---with the Conversation Agent autonomously managing bot orchestration and generating tailored meeting summaries.
+\end{itemize}
+
+\vspace{4pt}
 \textbf{Cross-Service Interoperability Framework --- Polyglot Service Contract Architecture}
 \begin{itemize}[leftmargin=*, nosep]
   \item Designed and implemented an \textbf{enterprise-grade interoperability framework} enabling seamless communication between services written in different languages (Node.js, Python, Java) using \textbf{Protocol Buffers (Proto)} and \textbf{Apache Artemis} messaging.
   \item Architected a \textbf{common service contract project} where service definitions, including method signatures, input/output schemas, and annotations, were defined in a language-agnostic manner, with Proto schema generation for input/output POJOs.
   \item Built a \textbf{code generator layer} that transforms service definitions and Proto schemas into \textbf{language-specific client/server libraries} for Node.js, Python, and Java, enabling type-safe cross-language service communication.
   \item The generated libraries internally manage \textbf{Artemis connection handling, Proto schema registration}, and message serialization---allowing application teams to simply include the library as a dependency and use structured service definitions to communicate across the polyglot microservice ecosystem.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Python Infrastructure Library --- Common Infra Components for Python Services}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Designed and built a \textbf{shared Python infrastructure library} as the organization transitioned from Java to Python for better AI/ML library support, providing standardized, best-practice wrappers for core infrastructure components to be adopted across all Python services.
+  \item Implemented an \textbf{Apache Artemis wrapper} with special attention to \textbf{consumer architecture}---supporting both \textbf{client-acknowledge and auto-acknowledge} modes, \textbf{consumer backpressure handling}, configurable \textbf{consumer thread pools} for high-load scenarios, and key configurations including \textbf{queue durability, message TTL}, and delivery guarantees.
+  \item Built an \textbf{Infinispan wrapper} with support for \textbf{Proto schema registration} enabling structured data storage in Protobuf format, configurable \textbf{message TTL and eviction strategies} (LRU, LIRS, size-based) for cache lifecycle management.
+  \item Implemented a \textbf{rate limiter module} supporting key algorithms including \textbf{Token Bucket, Sliding Window Log, Sliding Window Counter}, and \textbf{Fixed Window Counter}. Supported \textbf{key-based rate limiting} backed by \textbf{Infinispan} for distributed state, enabling \textbf{global rate limiting, per-user rate limiting}, and \textbf{concurrency control via semaphore}---all exposed as \textbf{Python decorators} for seamless integration into service endpoints.
 \end{itemize}
 
 \vspace{8pt}
@@ -213,6 +235,10 @@ Architected an agentic workflow engine using the ReAct (Reason-Act-Observe) patt
 Identified a critical organizational gap where multiple teams were independently building AI agents with inconsistent design patterns, no standardized context or memory management, and unaddressed agent security concerns. Designed and built a centralized agentic framework that allows applications to define agent configurations---model selection with fallback, guardrail policies, token limits, and context management strategies---and register reusable prompt templates with static and dynamic segments (runtime injection of tool definitions, structured output schemas, and domain-specific data). Applications create sessions against the framework, selecting their configured agent type and template; the prompt builder assembles the final prompt, and the agent executes within a managed lifecycle. The framework handles conversation memory (cache-backed short-term buffer, database-backed long-term persistence), enforces guardrails, and manages context windows per the application's selected strategy. Each application's system prompt is wrapped inside a framework-level agent system prompt that provides self-annealing behavior and graceful recovery semantics. Built with Python, LangGraph/LangChain, with cache for short-term and database for long-term memory management.
 
 \vspace{6pt}
+\textbf{AI Q\&A Module --- Retrieval Pipeline Optimization (Krista AI)} \\
+Drove multi-layer optimization of the enterprise AI Q\&A system used by clients for question-answering over large document sets. Replaced traditional single-strategy RAG with a hybrid retrieval pipeline: HyDE with multi-hop reasoning for richer query decomposition, combined BM25 lexical and semantic vector search with Reciprocal Rank Fusion for unified ranking, and Cross-Encoder reranking for top-k chunk selection---significantly improving answer quality. Optimized retrieval performance at scale using metadata filtering and database indexing. Currently evaluating ANN techniques (completed POC on Qdrant with HNSW, evaluating FAISS) and knowledge graph--based retrieval for entity-relationship search.
+
+\vspace{6pt}
 \textbf{Cross-Service Interoperability Framework (Krista AI)} \\
 Designed a polyglot service contract framework enabling type-safe communication between Node.js, Python, and Java services using Protocol Buffers and Apache Artemis. Built a code generator that transforms language-agnostic service definitions and Proto schemas into language-specific client/server libraries with built-in Artemis connection handling and schema registration, adopted as a shared library across the microservice ecosystem.
 
@@ -237,6 +263,10 @@ An AI-powered career chatbot that serves as an interactive virtual resume---enab
 \vspace{6pt}
 \textbf{Claude Skills \& Agents} | \href{https://github.com/Vijay2351989/claude-skills-agents}{GitHub} \\
 A curated collection of 14+ reusable Claude Code skills and agents for automating software development workflows and everyday tasks. Includes programming-focused agents (spec creation, systematic debugging, code review, project management, test architecture) and task automation agents (email management, movie recommendations, shopping). Built with Python, TypeScript, and Shell.
+
+\vspace{6pt}
+\textbf{AI Agentic Memory Management} | \href{https://github.com/Vijay2351989/ai-agentic-memory-management}{GitHub} \\
+A dual-layer memory system for LLM-powered chatbots that solves unbounded token growth in long conversations. Implements bounded short-term context using Redis with automatic summarization every N turns, and persistent long-term memory using Qdrant vector database for semantically searchable fact storage. A DSPy-based ReAct agent intelligently decides whether to add, update, or delete memories, while response generation and memory management operate as decoupled pipelines. Built with Python, DSPy, Qdrant, Redis, and OpenAI embeddings.
 
 \vspace{6pt}
 \textbf{AI Worker Sidekick Agent} | \href{https://github.com/Vijay2351989/ai-worker-sidekick-agent}{GitHub} \\
